@@ -7,12 +7,14 @@ import { RegistroComponent } from './registro/registro.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenu, MatMenuModule, MatToolbarModule} from '@angular/material';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistroComponent,
-    BusquedaComponent
+    BusquedaComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
