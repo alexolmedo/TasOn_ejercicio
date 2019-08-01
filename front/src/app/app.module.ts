@@ -1,13 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { RegistroComponent } from './registro/registro.component';
-import { BusquedaComponent } from './busqueda/busqueda.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {RegistroComponent} from './registro/registro.component';
+import {BusquedaComponent} from './busqueda/busqueda.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatMenu, MatMenuModule, MatToolbarModule} from '@angular/material';
-import { FormularioComponent } from './formulario/formulario.component';
+import {FormularioComponent} from './formulario/formulario.component';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,12 @@ import { FormularioComponent } from './formulario/formulario.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {UsuarioRestService} from "../usuario-rest.service";
+import {Router} from "@angular/router";
+import {Usuario} from "../usuario";
 
 @Component({
   selector: 'app-formulario',
@@ -7,9 +10,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormularioComponent implements OnInit {
 
-  constructor() { }
+  usuario = {
+    name: '',
+    lastname: '',
+    cedula: 0,
+    email: '',
+    company: '',
+    position: '',
+    address: '',
+    birthPlace: '',
+    birthDate: '',
+    phoneNumber: ''
+  };
+
+  constructor(private readonly _usuarioRestService: UsuarioRestService,
+              private readonly  _router: Router) {
+
+  }
 
   ngOnInit() {
+  }
+
+  crearUsuario() {
+    const registrarUsuario$ = this._usuarioRestService.create(
+      this.usuario.name,
+      this.usuario.lastname,
+      this.usuario.cedula,
+      this.usuario.email,
+      this.usuario.company,
+      this.usuario.position,
+      this.usuario.address,
+      this.usuario.birthPlace,
+      this.usuario.birthDate,
+      this.usuario.phoneNumber,
+    ).subscribe(
+      (usuario: Usuario) => {
+        alert(`Usuario creado: ${usuario.name} ${usuario.lastname} `);
+      }, (error => {
+        console.error('Error: ', error);
+      })
+    );
   }
 
 }
