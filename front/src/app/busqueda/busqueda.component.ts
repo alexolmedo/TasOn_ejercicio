@@ -9,6 +9,8 @@ import {Usuario} from '../usuario';
 })
 export class BusquedaComponent implements OnInit {
   usuarios: Usuario[] = [];
+  usuariosAux: Usuario[] = [];
+  elementoABuscar: '';
 
   constructor(
     private readonly _usuarioRest: UsuarioRestService
@@ -17,7 +19,10 @@ export class BusquedaComponent implements OnInit {
 
   ngOnInit() {
     const usuarios$ = this._usuarioRest.findAll();
-    usuarios$.subscribe((usuarios) => this.usuarios = usuarios);
+    usuarios$.subscribe((usuarios) => {
+      this.usuarios = usuarios;
+      this.usuariosAux = usuarios;
+    });
   }
 
   eliminarUsuario(id: number | string) {
@@ -31,4 +36,14 @@ export class BusquedaComponent implements OnInit {
     );
   }
 
+  buscar() {
+    console.log(this.elementoABuscar)
+    if (this.elementoABuscar != undefined) {
+      this.usuarios = this.usuariosAux.filter(usuario => {
+        return usuario.cedula.includes(this.elementoABuscar);
+      });
+    } else {
+      this.usuarios = this.usuariosAux;
+    }
+  }
 }

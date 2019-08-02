@@ -1,11 +1,22 @@
+<h3>Usuarios</h3>
+
+<form class="form-inline">
+
+  <div class="col-lg-auto my-1">
+    <label class="sr-only" for="search">Cédula</label>
+    <input type="number" class="form-control" id="search" placeholder="Cédula" [(ngModel)]="elementoABuscar"
+           [ngModelOptions]="{standalone: true}">
+  </div>
+    <button class="btn btn-success" label="Buscar" (click)="buscar()">Buscar</button>
+
+</form>
+
 <table class="table">
-  <tr>
-    <h3>Usuarios</h3>
-  </tr>
+
   <tr>
     <th>Id</th>
     <th>Nombre</th>
-    <th>Cédula </th>
+    <th>Cédula</th>
     <th>Correo</th>
     <th>Empresa</th>
     <th>Teléfono</th>
@@ -19,7 +30,7 @@
     <td>{{usuario.company}}</td>
     <td>{{usuario.phoneNumber}}</td>
     <td>
-      <button (click)="eliminarUsuario(usuario.id)" class="btn btn-danger" >Eliminar</button>
+      <button (click)="eliminarUsuario(usuario.id)" class="btn btn-danger">Eliminar</button>
     </td>
   </tr>
 </table>
