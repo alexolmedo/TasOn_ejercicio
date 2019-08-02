@@ -45,7 +45,12 @@ export class FormularioComponent implements OnInit {
       this.usuario.phoneNumber,
     ).subscribe(
       (usuario: Usuario) => {
-        alert(`Usuario creado: ${usuario.name} ${usuario.lastname} `);
+        alert(`Usuario creado exitosamente: ${usuario.name} ${usuario.lastname} `);
+        const url = [
+          '/',
+          'home'
+        ];
+        this._router.navigate(url);
       }, (error => {
         console.error('Error: ', error);
       })

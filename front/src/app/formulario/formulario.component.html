@@ -51,10 +51,10 @@
       <input type="text" class="form-control" id="phoneNumber" [(ngModel)]="usuario.phoneNumber" name="phoneNumber">
     </div>
 
-    <button class="btn btn-success" [disabled]="formularioRegistro.invalid"
+    <button class="btn btn-success btn-block" [disabled]="formularioRegistro.invalid"
             type="button"
-            (click)="crearUsuario()"> Guardar </button>
-
+            (click)="crearUsuario()"> Guardar
+    </button>
 
   </form>
 </div>
