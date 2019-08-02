@@ -1,1 +1,25 @@
-<p>busqueda works!</p>
+<table class="table">
+  <tr>
+    <h3>Usuarios</h3>
+  </tr>
+  <tr>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Cédula </th>
+    <th>Correo</th>
+    <th>Empresa</th>
+    <th>Teléfono</th>
+    <th>Acción</th>
+  </tr>
+  <tr *ngFor="let usuario  of usuarios">
+    <td>{{usuario.id}}</td>
+    <td>{{usuario.name}} {{usuario.lastname}} </td>
+    <td>{{usuario.cedula}}</td>
+    <td>{{usuario.email}}</td>
+    <td>{{usuario.company}}</td>
+    <td>{{usuario.phoneNumber}}</td>
+    <td>
+      <button (click)="eliminarUsuario(usuario.id)" class="btn btn-danger" >Eliminar</button>
+    </td>
+  </tr>
+</table>
