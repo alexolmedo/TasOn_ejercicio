@@ -11,13 +11,29 @@ import javax.persistence.Id;
 public class User {
     private @Id @GeneratedValue Long id;
     private String name;
-    private String role;
+    private String lastname;
+    private String cedula;
+    private String email;
+    private String company;
+    private String position;
+    private String address;
+    private String birthPlace;
+    private String birthDate;
+    private String phoneNumber;
 
     public User() {
     }
 
-    public User(String name, String role) {
+    public User(String name, String lastname, String cedula, String email, String company, String position, String address, String birthPlace, String birthDate, String phoneNumber) {
         this.name = name;
-        this.role = role;
+        this.lastname = lastname;
+        this.cedula = cedula;
+        this.email = email;
+        this.company = company;
+        this.position = position;
+        this.address = address;
+        this.birthPlace = birthPlace;
+        this.birthDate = birthDate;
+        this.phoneNumber = phoneNumber;
     }
 }

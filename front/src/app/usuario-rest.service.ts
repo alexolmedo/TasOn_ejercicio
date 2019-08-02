@@ -15,7 +15,7 @@ export class UsuarioRestService {
 
   create(name: string,
          lastname: string,
-         cedula: number,
+         cedula: string,
          email: string,
          company: string,
          position: string,

@@ -13,7 +13,7 @@ export class FormularioComponent implements OnInit {
   usuario = {
     name: '',
     lastname: '',
-    cedula: 0,
+    cedula: '',
     email: '',
     company: '',
     position: '',
